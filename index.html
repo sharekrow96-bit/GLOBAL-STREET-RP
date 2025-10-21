@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GOBAL STREET RP</title>
+<meta name="description" content="GOBAL STREET ROLEPLAY - SAMP server" />
+<style>
+:root{
+  --neon: #d9ff00;
+  --bg-dark: #050505;
+  --glass: rgba(255,255,255,0.03);
+  --txt-dark: #0b0b0b;
+  --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-sans);
+  background:var(--bg-dark);
+  color:var(--neon);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-y:auto;
+}
+
+/* Background */
+.bg {
+  position:fixed; inset:0; z-index:-3;
+  background-image: url('Gemini_Generated_Image_hkkrb2hkkrb2hkkr.png');
+  background-size: cover;
+  background-position: center;
+  filter: contrast(0.75) brightness(0.35) saturate(0.95);
+  transform: scale(1.02);
+  animation: bgFloat 28s linear infinite;
+}
+@keyframes bgFloat {
+  0% { transform: scale(1.02) translateY(0); }
+  50% { transform: scale(1.03) translateY(-8px); }
+  100% { transform: scale(1.02) translateY(0); }
+}
+
+.overlay {
+  position:fixed; inset:0; z-index:-2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
+}
+
+/* Layout */
+.container { max-width:1100px; margin:0 auto; padding:24px; }
+
+header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 0;
+}
+.logo { font-weight:900; font-size:20px; letter-spacing:1px; color:var(--neon); }
+nav a { margin-left:16px; color:var(--neon); text-decoration:none; font-weight:600; }
+.discord-btn {
+  padding:10px 16px; border-radius:28px; font-weight:800;
+  border:2px solid rgba(217,255,0,0.18);
+  background:transparent; color:var(--neon); text-decoration:none;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+}
+
+/* Hero */
+.hero { padding:60px 0 36px; text-align:center; }
+.title { font-size:56px; line-height:0.95; font-weight:900; text-transform:uppercase; }
+.subtitle { font-size:18px; margin-top:10px; opacity:0.95; }
+
+.ip-pill {
+  display:inline-block; margin-top:18px; padding:14px 26px; border-radius:48px;
+  border:2px solid rgba(217,255,0,0.16); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  font-family: monospace; font-weight:800; letter-spacing:2px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+}
+
+/* Buttons */
+.actions { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn { padding:14px 22px; border-radius:999px; font-weight:800; text-decoration:none; border:2px solid rgba(217,255,0,0.12); }
+.btn-join { background: linear-gradient(90deg,#d9ff00,#c8f500); color: var(--txt-dark); }
+.btn-ghost { background: transparent; color: var(--neon); }
+
+/* Sections */
+.section { padding:48px 0; color:var(--neon); }
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:14px; }
+.card { padding:16px; border-radius:10px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); }
+
+.founders { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:12px; }
+.founder { min-width:160px; padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.08)); text-align:center; }
+
+.footer { padding:18px 0; text-align:center; color:rgba(217,255,0,0.85); }
+
+/* Animations */
+.fade-in { opacity:0; transform: translateY(12px); animation: fadeIn 0.7s ease forwards; }
+@keyframes fadeIn { to { opacity:1; transform: translateY(0); } }
+
+.pulse { animation: pulseGlow 2.2s ease-in-out infinite; }
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 0 rgba(217,255,0,0)); }
+  40% { filter: drop-shadow(0 0 18px rgba(217,255,0,0.45)); }
+  100% { filter: drop-shadow(0 0 0 rgba(217,255,0,0)); }
+}
+
+/* Responsive */
+@media (max-width:880px) { .title { font-size:44px; } .subtitle { font-size:16px; } }
+@media (max-width:520px) { header { flex-direction:column; align-items:flex-start; } .title { font-size:32px; text-align:left; } .hero { text-align:left; padding-top:24px; } }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <header>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="logo">GOBAL STREET RP</div>
+        <nav style="display:flex; align-items:center;">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#rules">Rules</a>
+          <a href="#staff">Staff</a>
+        </nav>
+      </div>
+      <a class="discord-btn pulse" href="https://discord.gg/8mNtwFaG" target="_blank" rel="noopener">💬 Join Discord</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Hero">
+        <h1 class="title fade-in" style="animation-delay:0.06s">GLOBAL STREET<br>ROLEPLAY</h1>
+        <p class="subtitle fade-in" style="animation-delay:0.12s">Experience the ultimate SAMP roleplay adventure — immersive systems, custom content, and active community.</p>
+
+        <div class="ip-pill fade-in" style="animation-delay:0.18s">SERVER IP: 192.99.10.133:6755</div>
+
+        <div class="actions fade-in" style="animation-delay:0.22s">
+          <a class="btn btn-join" href="https://discord.gg/8mNtwFaG" target="_blank" rel="noopener">JOIN DISCORD</a>
+          <a class="btn btn-ghost" href="#about">LEARN MORE</a>
+        </div>
+
+        <div class="founders fade-in" style="animation-delay:0.28s">
+          <div class="founder"><strong>Gojo</strong><div style="opacity:0.9;margin-top:6px">Founder</div></div>
+          <div class="founder"><strong>Akashdeep</strong><div style="opacity:0.9;margin-top:6px">Founder — Head Developer</div></div>
+          <div class="founder"><strong>Vishal</strong><div style="opacity:0.9;margin-top:6px">Founder — Head of Community</div></div>
+        </div>
+      </section>
+
+      <section id="about" class="section fade-in" style="animation-delay:0.34s">
+        <div class="card">
+          <h2>About GOBAL STREET RP</h2>
+          <p style="margin-top:8px; line-height:1.6; max-width:900px;">
+            Gobal Street Roleplay (GSRP) is a SAMP roleplay server focused on player-driven stories, realism, and long-term progression.
+            We offer custom systems, active events, and a helpful community. New players and groups are welcome.
+          </p>
+        </div>
+      </section>
+
+      <section id="features" class="section fade-in" style="animation-delay:0.40s">
+        <h2>Features</h2>
+        <div class="card-grid">
+          <div class="card"><h3>Custom Economy</h3><p class="small">Jobs, businesses, and player-run stores.</p></div>
+          <div class="card"><h3>Jobs & Factions</h3><p class="small">Playable roles with progression and responsibilities.</p></div>
+          <div class="card"><h3>Community Events</h3><p class="small">Races, heists, and story-driven events.</p></div>
+        </div>
+      </section>
+
+      <section id="rules" class="section fade-in" style="animation-delay:0.46s">
+        <h2>Basic Rules</h2>
+        <ul style="margin-top:8px; line-height:1.8; max-width:920px;">
+          <li>No random deathmatch (RDM). Conflicts must be roleplayed.</li>
+          <li>No cheating, exploiting, or using unauthorized mods.</li>
+          <li>Respect others — harassment will be punished.</li>
+          <li>Follow job/faction event instructions during organized activities.</li>
+        </ul>
+      </section>
+
+      <section id="staff" class="section fade-in" style="animation-delay:0.52s">
+        <h2>Founders & Staff</h2>
+        <div class="founders">
+          <div class="founder"><strong>Gojo</strong><div style="opacity:0.9;margin-top:6px">Founder</div></div>
+          <div class="founder"><strong>Akashdeep</strong><div style="opacity:0.9;margin-top:6px">Founder — Head Developer</div></div>
+          <div class="founder"><strong>Vishal</strong><div style="opacity:0.9;margin-top:6px">Founder — Head of Community</div></div>
+        </div>
+        <p style="margin-top:12px; max-width:900px;">Staff applications and details are available on Discord.</p>
+      </section>
+
+      <section id="join" class="section fade-in" style="animation-delay:0.58s">
+        <h2>How to Join</h2>
+        <p style="max-width:900px; line-height:1.6;">1) Join our Discord → 2) Read rules and verify → 3) Connect: <strong>192.99.10.133:6755</strong> → 4) Enjoy roleplay!</p>
+        <div style="margin-top:10px;"><a class="btn btn-join" href="https://discord.gg/8mNtwFaG" target="_blank" rel="noopener">Join Discord</a></div>
+      </section>
+
+      <footer class="footer">
+        <div>Made for GOBAL STREET RP — © <span id="year"></span></div>
+      </footer>
+    </main>
+  </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Stagger in-view animations: apply delays already set in inline styles
+// No additional JS required for basic animations here.
+</script>
+</body>
+</html>
